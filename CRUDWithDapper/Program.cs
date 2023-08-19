@@ -1,7 +1,20 @@
+using CRUDWithDapper.Data.DapperContext;
+using CRUDWithDapper.Repositories;
+using CRUDWithDapper.Repositories.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+#region IOC
+
+builder.Services.AddScoped<IDapperContext,DapperContext>();
+builder.Services.AddScoped<IBranchRepository, BranchRepository>();
+builder.Services.AddScoped<IBankRepository, BankRepository>();
+
+#endregion
+
 
 var app = builder.Build();
 

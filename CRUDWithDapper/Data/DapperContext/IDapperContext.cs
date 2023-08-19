@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using CRUDWithDapper.Models;
+using Dapper;
+using System.Data;
 
 namespace CRUDWithDapper.Data.DapperContext
 {
